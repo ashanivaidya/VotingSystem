@@ -1,0 +1,38 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+}
+body {
+    background-color: #a4b6c1;
+}
+.admin-home h1 {
+    text-align: center;
+    color: #0a2b5c;
+    font-size: 30px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.admin-home input[type="submit"] {
+    width: 20%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: #940f15;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.admin-home a {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #940f15;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+

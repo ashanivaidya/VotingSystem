@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="px-2 py-2">
+      <h2 style="text-align: center;">Pending Approvals</h2>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+            <th scope="col">Zip code</th>
+            <th scope="col">Driving License</th>
+            <th scope="col">Passport</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">User Type</th>
+            <th scope="col">Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% arr.forEach(function(voter) { %>
+            
+            <tr>
+                <th scope="row" id="<%= voter.userId %>"><%= voter.userId %></th>
+                <td ><%= voter.name %></td>
+                <td><%= voter.age %></td>
+                <td><%= voter.address %></td>
+                <td><%= voter.zipcode %></td>
+                <td><%= voter.drivingLicense %><div class="thumbnail">
+                    <a href="/<%= voter.drivingLicense %>"+ target="_blank">
+                      <img src="/<%= voter.drivingLicense %>" style="height:25px;">
+                    </a>
+                  </div></td>
+                <td><%= voter.passportNo %>
+                    <div class="thumbnail">
+                        <a href="/<%= voter.passportNo %>"+ target="_blank">
+                          <img src="/<%= voter.passportNo %>" style="height:25px;">
+                        </a>
+                      </div></td>
+                <td><%= voter.emailId %></td>
+                <td><%= voter.userType %></td>
+                
+                <td>
+                    <form action="/approval/<%= voter.userId %>/<%= voter.emailId %>" method="post">
+                    
+                    <button type="submit" >Approve</button>
+                </form> 
+                <form action="/decline/<%= voter.userId %>/<%= voter.emailId %>" method="post">
+
+                <button>Decline</button></form></td>
+            </tr>
+       
+        <% }); %> 
+        </tbody>
+      </table>
+     
+        
+            
+           
+  </div>  
+
+</body>
+
+</html>

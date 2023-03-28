@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link href="/precincts.css" rel="stylesheet" type="text/css">
+	</head>
+<body>
+    <div class="precincts">
+        <h1>Precincts</h1>
+        <a href="/admin_home" class="backHome">Home</a>
+        <form action = precincts method = post>
+                <table border="1">
+                    <tr>
+                        <th>Precinct Manager ID</th>
+                        <th>Precinct</th>
+                        <th>Zipcode</th>
+                        <th>+ 4 Start</th>
+                        <th>+ 4 End</th>
+                    
+                    </tr>
+                    <%
+                    if(data.length!=0){
+                    var i=1;
+                    data.forEach(function(rows){
+                    %>
+            
+                    <tr>
+                        <td><%=rows.precMan_id%></td>
+                        <td><%=rows.Precinct%></td>
+                        <td><%=rows.Zipcode%></td>
+                        <td><%=rows.Plus_4_Start%></td>
+                        <td><%=rows.Plus_4_End%></td>
+                    </tr>
+                    <%  i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                    <% } %>
+                </table>
+            </form>
+           
+    </div>
+</body>
+</html>

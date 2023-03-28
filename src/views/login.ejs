@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Login</title>
+        <!-- the form awesome library is used to add icons to our form -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <!-- include the stylesheet file -->
+        <link href="/login.css" rel="stylesheet" type="text/css">
+		
+	</head>
+	<body>
+		<div class="login">
+			<h1>Login</h1>
+			<% if(typeof results != 'undefined'){ %>
+				<p> <%= results %> </p>
+			<% } %>
+			<form action="/" method="post">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<input type="submit" value="Login", formaction="/login">
+			</form>
+				<!-- <button type="submit" onclick="redirect('registration')" >Register</button> -->
+				<div id="register_div">
+				<a id="register" href="/registration", formaction ="/registration">Register</a>
+				</div>
+				<br />
+				<center>
+					<a href="/reset_password", formaction ="/reset_password">Forgot Password?</a>
+				</center>
+				
+		</div>
+	</body>
+</html>

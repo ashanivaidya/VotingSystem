@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 20px;
+    font-weight:bold;
+}
+body {
+    background-color: #a4b6c1;
+}
+.create_election {
+    width: 1000px;
+    height:auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 50px auto;
+}
+.create_election h1 {
+    text-align: center;
+    color: #0a2b5c;
+    font-size: 30px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.create_election form {
+    display:inline-block;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.create_election form label{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+}
+
+.create_election form input[type="text"] {
+    width: 500px;
+    height: 40px;
+    border: 1px solid #dee0e4;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: inline-block;
+}
+.create_election form input[type="date"] {
+    width: 310px;
+    height: 40px;
+    border: 1px solid #dee0e4;
+    margin-left: 20px;
+    padding: 20px;
+    display: inline-block;
+}
+.create_election form input[type="submit"] {
+    width: 102.8%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #940f15;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.create_election form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+.create_election form h4{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+}

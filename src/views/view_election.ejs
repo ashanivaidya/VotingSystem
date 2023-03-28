@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+      <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link href="/view_election.css" rel="stylesheet" type="text/css">
+		
+	</head>
+      <div class="view_election">
+            <form action = "view" method="post">
+            <label>Title:  </label>
+            <label><%= electionData[0].title%></label>  
+            <br />
+            <br />
+            <label>State:   </label>
+            <label><%= electionData[0].state%></label>  
+            <br />
+            <br />
+            <label>Start Date:  </label>
+            <label><%=electionData[0].start_MM%> / <%= electionData[0].start_DD%> / <%= electionData[0].start_YYYY%></label>  
+            <br />
+            <br />
+            <label>End Date:  </label>
+            <label><%= electionData[0].end_MM%> / <%= electionData[0].end_DD%> / <%= electionData[0].end_YYYY%></label> 
+            <br />
+            <br />
+            <label>Position:  </label>
+            <label><%= electionData[0].position%></label>     
+            <br />
+            <br />
+            <label>Candidate(s):  </label>
+            <label><%= electionData[0].candidates%></label>   
+            <br />
+            <br />
+            <label>Precinct(s):  </label>
+            <label><%= electionData[0].precincts%></label>  
+            <br />
+            <br />
+            <center>
+            <a href="/elections">Done</a>
+            </center>
+            </form>
+      </div>
+</html>

@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 20px;
+}
+body {
+    background-color: #a4b6c1;
+}
+
+.view_election {
+    width: 400px;
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+.view_election label{
+    width: 400px;
+    background-color: #ffffff;
+    margin: 100px auto;
+    
+}
+.view_election a {
+    width: 100%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: #940f15;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.view_election a [type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+

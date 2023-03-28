@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>User Registration</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+	.select-dropdown{
+    margin-left: 5px;
+    border: 1px solid #ced4da;
+    height: 38px;
+    border-radius: 4px;
+}
+</style>
+</head>
+<body>
+    <div class="px-3 py-3">
+      <button class="btn backBtn btn-dark btn-sm pull-left" onclick="location.href = '/';" type="button" >Back</button>
+        <h1>User Registration Page</h1>
+        <% if(userId) { %>
+          <div class="alert alert-success" role="alert">Your profile has been successfully registered, an email will be sent to your email address once it gets approved by manager/admin after further inspection.</div>
+          <% } %>
+          <!-- (locals.userId) -->
+        <form action="/registerUser" id="post" method="POST" encType="multipart/form-data">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputname">Name</label>
+                <input type="name" class="form-control" name="name" required id="inputname" placeholder="Name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputage">Age</label>
+                <input type="age" class="form-control" name="age" required id="inputage" placeholder="age">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" name="address" required id="inputAddress" placeholder="Address">
+            </div>
+            <div class="form-group">
+              <label for="inputpassport">Passport</label>
+              <input type="file" class="form-control" name="passport" accept="image/*" required id="inputpassport" />
+              
+              <!-- <input type="text" class="form-control" name="passport" required id="inputpassport" placeholder="Passport"> -->
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputdrivinglicense">Driving License</label>
+                <input type="file" class="form-control" name="drivinglicense" accept="image/*" required id="inputdrivinglicense" />
+                
+                <!-- <input type="text" class="form-control" name="drivinglicense" required id="inputdrivinglicense"> -->
+              </div>
+              
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" name="zip" required id="inputZip">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputemail">Email id</label>
+                  <input type="email" name="email" class="form-control" required id="inputemail">
+                </div>
+                <div class="form-group">
+                  <label for="inputrole">User Role</label>
+                  <div>
+                    <select class="form-select select-dropdown" name="role" required id="inputrole" aria-label="Default select example">
+                      
+                      <option value="voter" selected >Voter</option>
+                      <option value="manager">Manager</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                  </div>
+                  
+                </div>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+           
+          </form>
+          
+          <% if( error_msg.length > 0) { %>
+            <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+            <% } %>
+    </div>
+</body>
+
+</html>
